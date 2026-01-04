@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famous Places - Karachi</title>
+  <!-- Replaced Tailwind with vanilla CSS architecture -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="globals.css">
+  <!-- Standardized nav and cleaned up internal styles -->
+</head>
+
+<body class="fade-in">
+  <!-- Updated nav structure -->
+  <nav>
+    <div class="container nav-content">
+      <a href="index.html" class="logo">KARACHI.</a>
+      <div class="nav-links">
+        <a href="history.html">History</a>
+        <a href="culture.html">Culture</a>
+        <a href="traditions.html">Traditions</a>
+        <a href="places.html" class="active">Places</a>
+      </div>
+      <button class="mobile-nav-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="history.html">History</a>
+    <a href="culture.html">Culture</a>
+    <a href="traditions.html">Traditions</a>
+    <a href="places.html" class="active">Places</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const spans = menuToggle.querySelectorAll('span');
+      spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+      spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+      spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = '';
+      });
+    });
+  </script>
+
+  <main style="padding-top: 10rem; padding-bottom: 10rem;">
+    <div class="container">
+      <header style="margin-bottom: 8rem;" class="animate-fade-in-up">
+        <span class="section-tag">Urban Exploration</span>
+        <h1 style="font-size: clamp(3rem, 7vw, 5rem);">CITY OF <span
+            style="font-style: italic; color: var(--color-primary);">LANDMARKS.</span></h1>
+      </header>
+
+      <!-- Added more places and used the new Mazar-e-Quaid image -->
+      <div class="grid grid-cols-2" style="gap: 8rem 4rem;">
+        <div class="animate-fade-in-up">
+          <div class="img-container" style="aspect-ratio: 1; margin-bottom: 2rem;">
+            <img src="public/images/mazar-e-quaid.jpg" alt="Mazar-e-Quaid">
+          </div>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Mazar-e-Quaid</h3>
+          <p style="color: var(--color-muted-foreground); margin-bottom: 1.5rem;">The pure white marble mausoleum is the
+            final resting place of Quaid-e-Azam Muhammad Ali Jinnah, the founder of Pakistan. Completed in 1970, it is a
+            masterpiece of modern Islamic architecture and a symbol of national pride.</p>
+        </div>
+
+        <div class="animate-fade-in-up delay-1" style="margin-top: 4rem;">
+          <div class="img-container" style="aspect-ratio: 1; margin-bottom: 2rem;">
+            <img src="public/images/mohatta-palace.jpg" alt="Mohatta Palace">
+          </div>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Mohatta Palace</h3>
+          <p style="color: var(--color-muted-foreground); margin-bottom: 1.5rem;">Built in 1927 as a summer home for a
+            businessman from Rajasthan, this palace is a stunning blend of Rajput and Mughal styles. Today, it serves as
+            a premier museum hosting international art and history exhibitions.</p>
+        </div>
+
+        <div class="animate-fade-in-up">
+          <div class="img-container" style="aspect-ratio: 1; margin-bottom: 2rem;">
+            <img src="public/images/frere-hall.jpg" alt="Frere Hall">
+          </div>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Frere Hall</h3>
+          <p style="color: var(--color-muted-foreground); margin-bottom: 1.5rem;">A relic of the British Raj, Frere Hall
+            is a Venetian-Gothic masterpiece. It houses a vast library and a world-famous ceiling mural titled
+            'Arz-o-Samawat' painted by the legendary artist Sadequain.</p>
+        </div>
+
+        <div class="animate-fade-in-up delay-1" style="margin-top: 4rem;">
+          <div class="img-container" style="aspect-ratio: 1; margin-bottom: 2rem;">
+            <img src="public/images/clifton-beach.jpg" alt="Clifton Beach at Sunset">
+          </div>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Clifton Beach</h3>
+          <p style="color: var(--color-muted-foreground); margin-bottom: 1.5rem;">The city's most popular coastline,
+            Clifton Beach (Sea View) is the soul of Karachi's leisure life. From camel rides and beach buggies to the
+            famous street food stalls, it is where the city comes to breathe.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="font-size: 0.75rem; color: var(--color-muted-foreground); letter-spacing: 0.2em;">EXPLORING THE
+        ARCHITECTURAL WONDERS OF SINDH</p>
+    </div>
+  </footer>
+</body>
+
+</html>

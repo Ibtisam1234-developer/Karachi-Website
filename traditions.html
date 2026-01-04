@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditions - Karachi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="globals.css">
+</head>
+
+<body class="animate-fade-in">
+    <!-- Unified nav structure -->
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">KARACHI.</a>
+            <div class="nav-links">
+                <a href="history.html">History</a>
+                <a href="culture.html">Culture</a>
+                <a href="traditions.html" class="active">Traditions</a>
+                <a href="places.html">Places</a>
+            </div>
+            <button class="mobile-nav-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="history.html">History</a>
+        <a href="culture.html">Culture</a>
+        <a href="traditions.html" class="active">Traditions</a>
+        <a href="places.html">Places</a>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+            spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+        });
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = '';
+            });
+        });
+    </script>
+
+    <main style="padding-top: 10rem; padding-bottom: 10rem;">
+        <div class="container" style="max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 8rem;" class="animate-fade-in-up">
+                <span class="section-tag">Living Legacy</span>
+                <h1 style="font-size: clamp(3.5rem, 8vw, 6rem);">RITUALS OF <br /><span
+                        style="font-style: italic; color: var(--color-primary);">THE SOUL.</span></h1>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 3rem;">
+                <div class="card animate-fade-in-up delay-1">
+                    <h3 style="font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--color-primary);">Sufism & The Sea
+                    </h3>
+                    <p style="color: var(--color-muted-foreground); margin-bottom: 1rem;">The traditions of Karachi are
+                        deeply intertwined with the Arabian Sea and the Sufi saints who protected its shores. The shrine
+                        of Abdullah Shah Ghazi in Clifton remains a focal point of spiritual life, where devotees from
+                        all walks of life gather to seek peace.</p>
+                    <p style="color: var(--color-muted-foreground);">On Thursday nights, the hypnotic rhythms of Qawwali
+                        music fill the air, a centuries-old tradition of devotional singing that bridges the gap between
+                        the earthly and the divine.</p>
+                </div>
+
+                <div class="card animate-fade-in-up delay-2">
+                    <h3 style="font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--color-primary);">Wedding
+                        Festivities</h3>
+                    <p style="color: var(--color-muted-foreground); margin-bottom: 1rem;">Karachi weddings are
+                        world-famous for their scale and vibrancy. Spanning several days, the festivities include the
+                        colorful 'Mehndi' nights with traditional songs and dance, the formal 'Nikah', and the grand
+                        'Valima' banquets.</p>
+                    <p style="color: var(--color-muted-foreground);">These events are a showcase of the city's diverse
+                        ethnic traditions, where Sindhi Ajrak meets Lucknowi Ghararas, creating a visual feast of
+                        Pakistani craftsmanship and hospitality.</p>
+                </div>
+
+                <div class="card animate-fade-in-up delay-3">
+                    <h3 style="font-size: 2.25rem; margin-bottom: 1.5rem; color: var(--color-primary);">Sports & Lyari
+                    </h3>
+                    <p style="color: var(--color-muted-foreground); margin-bottom: 1rem;">Cricket is a religion in
+                        Karachi, with every street corner transformed into a stadium during the evenings. However, the
+                        neighborhood of Lyari holds a unique tradition—a deep-rooted passion for Football that has
+                        earned it the nickname 'Mini Brazil'.</p>
+                    <p style="color: var(--color-muted-foreground);">Whether it's a test match at the National Stadium
+                        or a local football tournament in the narrow alleys of Lyari, the city's sporting spirit is a
+                        unifying force that transcends all social barriers.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="py-12 px-6 border-t border-border text-center text-xs text-muted-foreground uppercase tracking-widest footer">
+        <span>© 2026 Karachi Heritage Project</span>
+    </footer>
+</body>
+
+</html>

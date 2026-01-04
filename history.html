@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Karachi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="globals.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">KARACHI.</a>
+            <div class="nav-links">
+                <a href="history.html" class="active">History</a>
+                <a href="culture.html">Culture</a>
+                <a href="traditions.html">Traditions</a>
+                <a href="places.html">Places</a>
+            </div>
+            <button class="mobile-nav-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="history.html" class="active">History</a>
+        <a href="culture.html">Culture</a>
+        <a href="traditions.html">Traditions</a>
+        <a href="places.html">Places</a>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = mobileMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+            spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -5px)' : '';
+        });
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = '';
+            });
+        });
+    </script>
+
+    <main style="padding-top: 10rem; padding-bottom: 10rem;">
+        <div class="container">
+            <header style="max-width: 800px; margin-bottom: 8rem;" class="animate-fade-in-up">
+                <span class="section-tag">Historical Timeline</span>
+                <h1 style="font-size: clamp(3rem, 6vw, 5rem); margin-top: 1.5rem;">FROM KOLACHI <br /> TO <span
+                        style="font-style: italic; color: var(--primary);">MODERNITY.</span></h1>
+                <p style="font-size: 1.25rem; color: var(--muted-foreground); margin-top: 2rem;">Explore the thousands
+                    of years of transformation, from a humble fishing village on the edge of the Arabian Sea to the
+                    sprawling megacity of today.</p>
+            </header>
+
+            <!-- Expanded history sections with more detailed text -->
+            <div style="display: flex; flex-direction: column; gap: 10rem;">
+                <article class="grid grid-cols-2 items-center animate-fade-in-up">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Legend of Mai Kolachi</h2>
+                        <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">Long before it was a port of
+                            global significance, the area was a tiny settlement known as 'Kolachi-jo-Goth'. The village
+                            was named after a legendary woman, Mai Kolachi, who led her people and whose sons were
+                            famously rescued from a perilous storm.</p>
+                        <p style="color: var(--muted-foreground);">For centuries, the settlement remained a quiet haven
+                            for traders and fishermen, protected by its natural harbor and the spiritual guidance of
+                            saints whose shrines still stand along the coastline today.</p>
+                    </div>
+                    <div class="img-container" style="aspect-ratio: 16/10;">
+                        <img src="public/images/kolachi-village.jpg" alt="Depiction of Old Kolachi Village">
+                    </div>
+                </article>
+
+                <article class="grid grid-cols-2 items-center animate-fade-in-up">
+                    <div class="img-container" style="order: 2; aspect-ratio: 16/10;">
+                        <img src="public/images/british-karachi.jpg" alt="Victorian Era Karachi">
+                    </div>
+                    <div style="order: 1;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The British Transformation</h2>
+                        <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">In 1839, the British East
+                            India Company captured the city, recognizing its immense strategic value. Under British
+                            rule, Karachi was developed as the 'Queen of the East', with a modern harbor, railway
+                            networks, and majestic Victorian-Gothic public buildings.</p>
+                        <p style="color: var(--muted-foreground);">This era saw the construction of iconic landmarks
+                            such as Empress Market, Frere Hall, and St. Patrick's Cathedral, which continue to define
+                            the city's historic core, Saddar, to this day.</p>
+                    </div>
+                </article>
+
+                <article class="grid grid-cols-2 items-center animate-fade-in-up">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Independence & The Capital</h2>
+                        <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">In 1947, Karachi became the
+                            first capital of a newly independent Pakistan. The city's population exploded as millions of
+                            migrants (Muhajirs) arrived from across the border, bringing with them a rich tapestry of
+                            art, language, and culture that would redefine the city's identity forever.</p>
+                        <p style="color: var(--muted-foreground);">Though the capital moved to Islamabad in the 1960s,
+                            Karachi remained the commercial soul of the country, continuing to grow at an unprecedented
+                            pace as the gateway between Pakistan and the world.</p>
+                    </div>
+                    <div class="img-container"
+                        style="aspect-ratio: 16/10; background: var(--muted); display: flex; align-items: center; justify-content: center;">
+                        <img src="public/images/mazar-e-quaid.jpg" alt="Mazar-e-Quaid - Symbol of Independence">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="font-size: 0.75rem; color: var(--muted-foreground); letter-spacing: 0.2em;">PRESERVING THE
+                CHRONICLES OF KARACHI</p>
+        </div>
+    </footer>
+</body>
+
+</html>
